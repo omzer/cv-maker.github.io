@@ -1,0 +1,331 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <link rel="icon" href="imgs/icon.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+</head>
+
+<body>
+
+
+    <!-- Nav bar -->
+    <nav class=" blue lighten-1">
+        <a href="#" class="brand-logo center">CV-Maker</a>
+        <ul class="nav-wrapper right">
+            <!-- Home -->
+            <li>
+                <a href="index.html" class="tooltipped" data-position="bottom" data-tooltip="Home page">
+                    <i class="material-icons">home</i>
+                </a>
+            </li>
+            <!-- Profile -->
+            <li>
+                <a href="profile.html" class="lighten-2 tooltipped" data-position="bottom" data-tooltip="Profile">
+                    <i class="material-icons">account_circle</i>
+                </a>
+            </li>
+            <!-- Cerate -->
+            <li>
+                <a class="lighten-2 green tooltipped" data-position="bottom" data-tooltip="Create CV">
+                    <i class="material-icons">add</i>
+                </a>
+            </li>
+
+            <!-- Log out -->
+            <li>
+                <a onclick="signOut()" class="tooltipped" data-position="bottom" data-tooltip="Log out">
+                    <i class="material-icons">exit_to_app</i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- End of nav  -->
+    <!-- Tabs -->
+
+    <div class="row">
+
+        <ul class="tabs tabs-fixed-width col s12">
+            <!-- Personal info tab -->
+            <li class="tab">
+                <a href="#personalTab">Personal info</a>
+            </li>
+
+            <li class="tab">
+                <a href="#educationTab">Education</a>
+            </li>
+            <li class="tab">
+                <a href="#nothing">Intrests</a>
+            </li>
+            <li class="tab">
+                <a href="#nothing">Skills</a>
+            </li>
+            <li class="tab">
+                <a href="#nothing">Refrences</a>
+            </li>
+            <li class="tab">
+                <a href="#nothing">Finish!</a>
+            </li>
+
+
+        </ul>
+
+        <!-- Personal info structure -->
+        <div id="personalTab" class="row">
+            <!-- Personal struct -->
+            <div id="personal" class="col s6">
+                <h4>Personal info</h4>
+                <div class="divider"></div>
+                <!-- Name -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">edit_mode</i>
+                        <input id="name" type="text" class="validate">
+                        <label class="active" for="name">Name</label>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">email</i>
+                        <input id="email" type="email" class="validate">
+                        <label class="active" for="email">Email</label>
+                    </div>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">phone</i>
+                        <input id="number" type="number" class="validate">
+                        <label class="active" for="number">Phone Number</label>
+                    </div>
+                </div>
+
+                <!-- Address -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">add_location</i>
+                        <input id="address" type="text" class="validate">
+                        <label class="active" for="address">Address</label>
+                    </div>
+                </div>
+
+                <!-- Preview Button -->
+
+                <div class="row">
+                    <button onclick="personPrev()" class="col s12 btn-large waves-effect">Preview</button>
+                </div>
+
+                <!-- Personal End  -->
+            </div>
+
+            <!-- Personal view struct -->
+            <div class="col s6" style="height: 100%">
+                <h4>Preview</h4>
+                <div class="divider"></div>
+
+                <!-- Preview Collection -->
+
+                <ul class="collection z-depth-2">
+                    <li class="collection-header">
+                        <h4 class="center">Personal info</h4>
+                    </li>
+                    <div class="divider"></div>
+                    <!-- Name -->
+                    <li class="collection-item">
+                        <i class="material-icons blue-text">account_circle</i>
+                        <a class="flow-text" id="prevName">YOUR NAME</a>
+                    </li>
+                    <!-- Birth date -->
+                    <li class="collection-item">
+                        <i class="material-icons blue-text">date_range</i>
+                        <a class="flow-text" id="prevDate">Your Birthday</a>
+                    </li>
+                    <!-- Email -->
+                    <li class="collection-item">
+                        <i class="material-icons blue-text">email</i>
+                        <a class="flow-text" id="prevEmail">Your Email</a>
+                    </li>
+
+                    <!-- Phone Number -->
+                    <li class="collection-item">
+                        <i class="material-icons blue-text">phone</i>
+                        <a class="flow-text" id="prevNumber">Your Phone Number</a>
+                    </li>
+
+                    <!-- Address -->
+                    <li class="collection-item">
+                        <i class="material-icons blue-text">add_location</i>
+                        <a class="flow-text" id="prevAddress">Your Address</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- Education structure -->
+
+        <div id="educationTab" class="row">
+            <!-- Personal struct -->
+            <div class="col s6">
+                <h4>Education</h4>
+                <div class="divider"></div>
+                <br>
+                <!-- Institute -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">home</i>
+                        <input id="institute" type="text" class="validate">
+                        <label class="active" for="institute">Institute Name</label>
+                    </div>
+                </div>
+
+                <!-- From & To -->
+                <div class="row">
+                    <!-- From -->
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">play_arrow</i>
+                        <input id="from" type="date" class="validate">
+                        <label class="active" for="from">From</label>
+                    </div>
+                    <!-- To -->
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">stop</i>
+                        <input id="to" type="date" class="validate">
+                        <label class="active" for="to">To</label>
+                    </div>
+                </div>
+
+                <!-- Describtion Number -->
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="educationDesc" class="materialize-textarea"></textarea>
+                                <label for="educationDesc">Mote Describtion</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Preview Button -->
+
+                <div class="row">
+                    <button onclick="educationPrev()" class="col s12 btn-large waves-effect">Preview</button>
+                </div>
+
+                <!-- Personal End  -->
+            </div>
+
+            <!-- Education view struct -->
+            <div class="col s6">
+                <h4>Preview</h4>
+                <div class="divider"></div>
+
+                <!-- Preview Collection -->
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons">school</i>
+                            <h6 id="instName"> Institute Name</h6>
+                        </div>
+                        <div class="collapsible-body">
+                            <h5 id="instFromAndTo" class="grey-text">1/2/2012 - 4/9/2014</h5>
+                            <p id="instDesc" class="flow-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur, ea?</p>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div id="nothing" class="orange col s12">
+            <h1 class="white-text center">
+                Nothing here !!
+            </h1>
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- Edu -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Fab -->
+
+    <div class="fixed-action-btn">
+        <a href="#!" class="hoverable btn-floating pulse orange btn-large waves-effect waves-light tooltipped" data-position="left"
+            data-tooltip="Save Data">
+            <i class="large material-icons">save</i>
+        </a>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCuw1Rp-S4nVlmxspsx8C56ZzFCywjMYuM",
+            authDomain: "cv-maker-2017.firebaseapp.com",
+            databaseURL: "https://cv-maker-2017.firebaseio.com",
+            projectId: "cv-maker-2017",
+            storageBucket: "cv-maker-2017.appspot.com",
+            messagingSenderId: "396157923179"
+        };
+        firebase.initializeApp(config);
+
+    </script>
+
+    <!-- Materialize -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <!-- Customized by me -->
+    <script src="js/create.js"></script>
+    <script> 
+        $(document).ready(function () {
+            $('ul.tabs').tabs();
+        });
+
+        $(document).ready(function () {
+            $('.collapsible').collapsible();
+        });
+
+    </script>
+</body>
+
+</html>
